@@ -20,7 +20,7 @@ class _KarierHomePageState extends State<KarierHomePage> {
     return Scaffold(
       key: scaffoldKey,
       drawer: DrawerPage(),
-      backgroundColor: white.withOpacity(0.95),
+      backgroundColor: Color(0xFFFAFAFA),
       appBar:
           PreferredSize(child: getAppBar(), preferredSize: Size.fromHeight(60)),
       body: getBody(),
@@ -29,15 +29,15 @@ class _KarierHomePageState extends State<KarierHomePage> {
 
   Widget getAppBar() {
     return AppBar(
-      
       leading: IconButton(
-          onPressed: () {
-            scaffoldKey.currentState?.openDrawer();
-          },
-          icon: Icon(
-            AntDesign.menu_unfold,
-            color: secondary,
-          ),),
+        onPressed: () {
+          scaffoldKey.currentState?.openDrawer();
+        },
+        icon: Icon(
+          AntDesign.menu_unfold,
+          color: secondary,
+        ),
+      ),
       elevation: 0,
       backgroundColor: white.withOpacity(0.95),
       actions: [
@@ -134,8 +134,8 @@ class _KarierHomePageState extends State<KarierHomePage> {
             height: 55,
             decoration: BoxDecoration(
                 color: white,
-                borderRadius: BorderRadius.circular(12),
-                border: Border.all(),
+                borderRadius: BorderRadius.circular(8),
+                border: Border.all(color: Color(0xFFE9E9E9)),
                 boxShadow: [
                   BoxShadow(
                       color: secondary.withOpacity(0.015),
@@ -153,8 +153,15 @@ class _KarierHomePageState extends State<KarierHomePage> {
                     child: TextField(
                       cursorColor: white.withOpacity(0.4),
                       decoration: InputDecoration(
-                          border: InputBorder.none,
-                          hintText: "Search job here..."),
+                        border: InputBorder.none,
+                        hintText: "Search job here...",
+                        hintStyle: TextStyle(
+                          fontSize: 14,
+                          fontFamily: 'Poppins',
+                          fontWeight: FontWeight.w400,
+                          color: Color(0xFF585858),
+                        ),
+                      ),
                     ),
                   ),
                 ),
@@ -292,8 +299,10 @@ class _KarierHomePageState extends State<KarierHomePage> {
                 style: TextStyle(
                     fontSize: 18,
                     fontFamily: 'Poppins',
-                    fontWeight: FontWeight.w500),
+                    fontWeight: FontWeight.w500,
+                    color: black),
               ),
+              
               Text(
                 "More",
                 style: TextStyle(
@@ -316,7 +325,10 @@ class _KarierHomePageState extends State<KarierHomePage> {
                 child: Container(
                   width: 135,
                   height: 60,
-                  decoration: BoxDecoration(color: Color(0xFFF2F4FC)),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(8),
+                    border: Border.all(color: Color(0xFFE3E7FA)),
+                    color: Color(0xFFF2F4FC)),
                   child: Center(
                     child: Row(
                       children: [
@@ -356,7 +368,10 @@ class _KarierHomePageState extends State<KarierHomePage> {
             child: Container(
               width: 200,
               height: 220,
-              decoration: BoxDecoration(color: white),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(8),
+                border: Border.all(color: Color(0x1A122261)),
+                color: white),
               child: Padding(
                 padding: const EdgeInsets.only(top: 20),
                 child: Column(
@@ -366,7 +381,7 @@ class _KarierHomePageState extends State<KarierHomePage> {
                       width: 70,
                       height: 70,
                       decoration:
-                          BoxDecoration(color: secondary.withOpacity(0.4)),
+                          BoxDecoration(color: Color(0xFFD3D3D3)),
                     ),
                     const SizedBox(height: 20),
                     Text(
@@ -391,7 +406,7 @@ class _KarierHomePageState extends State<KarierHomePage> {
                     Text(
                       "${karierVocancyList[index]['number_vocancy'].toString()} Vocancy",
                       style: TextStyle(
-                        fontSize: 16,
+                        fontSize: 14,
                         fontFamily: 'Poppins',
                         fontWeight: FontWeight.w600,
                         color: Color(0xFF122261),
@@ -422,7 +437,8 @@ class _KarierHomePageState extends State<KarierHomePage> {
                 style: TextStyle(
                     fontSize: 18,
                     fontFamily: 'Poppins',
-                    fontWeight: FontWeight.w500),
+                    fontWeight: FontWeight.w500,
+                    color: black),
               ),
               Text(
                 "More",
@@ -446,7 +462,8 @@ class _KarierHomePageState extends State<KarierHomePage> {
                 height: 130,
                 decoration: BoxDecoration(
                     color: white,
-                    borderRadius: BorderRadius.circular(15),
+                    borderRadius: BorderRadius.circular(8),
+                    border: Border.all(color: Color(0x1A122261)),
                     boxShadow: [
                       BoxShadow(
                           color: black.withOpacity(0.015),

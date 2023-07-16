@@ -72,7 +72,9 @@ class _JobSeekerPortalState extends State<JobSeekerPortal> {
       child: Container(
         width: size.width,
         height: 55,
-        decoration: BoxDecoration(color: secondary.withOpacity(0.05)),
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(8),
+            color: secondary.withOpacity(0.05)),
         child: Row(children: [
           pageIndex == 0
               ? Flexible(
@@ -88,12 +90,15 @@ class _JobSeekerPortalState extends State<JobSeekerPortal> {
                         child: Container(
                           width: (size.width - 40) / 2,
                           height: 50,
-                          decoration: BoxDecoration(color: white, boxShadow: [
-                            BoxShadow(
-                                color: secondary.withOpacity(0.15),
-                                blurRadius: 5,
-                                offset: Offset(0, 5))
-                          ]),
+                          decoration: BoxDecoration(
+                              color: white,
+                              borderRadius: BorderRadius.circular(8),
+                              boxShadow: [
+                                BoxShadow(
+                                    color: secondary.withOpacity(0.15),
+                                    blurRadius: 5,
+                                    offset: Offset(0, 5))
+                              ]),
                           child: Center(
                             child: Text(
                               "SIGN IN",
@@ -120,7 +125,9 @@ class _JobSeekerPortalState extends State<JobSeekerPortal> {
                       child: Container(
                         width: (size.width - 40) / 2,
                         height: 50,
-                        decoration: BoxDecoration(),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(8),
+                        ),
                         child: Center(
                           child: Text(
                             "SIGN IN",
@@ -147,12 +154,15 @@ class _JobSeekerPortalState extends State<JobSeekerPortal> {
                         child: Container(
                           width: (size.width - 40) / 2,
                           height: 50,
-                          decoration: BoxDecoration(color: white, boxShadow: [
-                            BoxShadow(
-                                color: secondary.withOpacity(0.15),
-                                blurRadius: 5,
-                                offset: Offset(0, 5))
-                          ]),
+                          decoration: BoxDecoration(
+                              color: white,
+                              borderRadius: BorderRadius.circular(8),
+                              boxShadow: [
+                                BoxShadow(
+                                    color: secondary.withOpacity(0.15),
+                                    blurRadius: 5,
+                                    offset: Offset(0, 5))
+                              ]),
                           child: Center(
                             child: Text(
                               "REGISTER",
@@ -179,7 +189,9 @@ class _JobSeekerPortalState extends State<JobSeekerPortal> {
                       child: Container(
                         width: (size.width - 40) / 2,
                         height: 50,
-                        decoration: BoxDecoration(),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(8),
+                        ),
                         child: Center(
                           child: Text(
                             "REGISTER",
@@ -207,30 +219,46 @@ class _JobSeekerPortalState extends State<JobSeekerPortal> {
           Container(
             width: size.width - 44,
             height: 55,
-            decoration: BoxDecoration(color: Color(0xFFEDEDED)),
-            child: TextField(
-              decoration: InputDecoration(
-                  border: OutlineInputBorder(), hintText: "Username"),
+            decoration: BoxDecoration(
+                color: Color(0xFFF8F8F8),
+                borderRadius: BorderRadius.circular(8)),
+            child: Padding(
+              padding: const EdgeInsets.only(left: 15, right: 10),
+              child: TextField(
+                decoration: InputDecoration(
+                    border: InputBorder.none, hintText: "Username"),
+              ),
             ),
           ),
           const SizedBox(height: 20),
           Container(
             width: double.infinity,
             height: 55,
-            decoration:
-                BoxDecoration(border: Border.all(), color: Color(0xFFEDEDED)),
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(8),
+                color: Color(0xFFF8F8F8)),
             child: Row(
               children: [
                 Container(
                   width: (size.width - 30) * 0.7,
                   height: 55,
+                  decoration: BoxDecoration(
+                    color: Color(0xFFF8F8F8),
+                    borderRadius: BorderRadius.circular(8),
+                  ),
                   child: Padding(
-                    padding: const EdgeInsets.only(left: 15),
+                    padding: const EdgeInsets.only(left: 15, right: 15),
                     child: TextField(
                       obscureText: true,
-                      cursorColor: secondary,
                       decoration: InputDecoration(
-                          border: InputBorder.none, hintText: "Password"),
+                          border: InputBorder.none,
+                          hintText: "Password",
+                          hintStyle: TextStyle(
+                            fontSize: 16,
+                            fontFamily: 'Poppins',
+                            fontWeight: FontWeight.w500,
+                            color: Color(0x66323232),
+                          )),
                     ),
                   ),
                 ),
@@ -246,7 +274,7 @@ class _JobSeekerPortalState extends State<JobSeekerPortal> {
                         child: Text(
                           "SHOW",
                           style: TextStyle(
-                            color: secondary,
+                            color: Color(0xFF122261),
                             fontSize: 14,
                             fontFamily: 'Poppins',
                             fontWeight: FontWeight.w600,
@@ -291,13 +319,20 @@ class _JobSeekerPortalState extends State<JobSeekerPortal> {
                     fontWeight: FontWeight.w400,
                     color: black.withOpacity(0.4)),
               ),
-              Text(
-                "Reset here",
-                style: TextStyle(
-                    fontSize: 16,
-                    fontFamily: 'Poppins',
-                    fontWeight: FontWeight.w600,
-                    color: secondary),
+              Container(
+                width: 86,
+                height: 25,
+                decoration: BoxDecoration(
+                    border:
+                        Border(bottom: BorderSide(color: Color(0xFF122261)))),
+                child: Text(
+                  "Reset here",
+                  style: TextStyle(
+                      fontSize: 16,
+                      fontFamily: 'Poppins',
+                      fontWeight: FontWeight.w600,
+                      color: secondary),
+                ),
               ),
             ],
           ),
@@ -326,7 +361,7 @@ class _JobSeekerPortalState extends State<JobSeekerPortal> {
               height: 60,
               decoration: BoxDecoration(
                 color: Color(0xFF376AED),
-                borderRadius: BorderRadius.circular(10),
+                borderRadius: BorderRadius.circular(8),
               ),
               child: Padding(
                 padding: const EdgeInsets.only(left: 20),
@@ -364,9 +399,9 @@ class _JobSeekerPortalState extends State<JobSeekerPortal> {
               width: double.infinity,
               height: 60,
               decoration: BoxDecoration(
-                border: Border.all(color: secondary),
+                border: Border.all(color: Color(0xFFD1D1D1)),
                 color: white,
-                borderRadius: BorderRadius.circular(10),
+                borderRadius: BorderRadius.circular(8),
               ),
               child: Padding(
                 padding: const EdgeInsets.only(left: 20),
@@ -417,15 +452,19 @@ class _JobSeekerPortalState extends State<JobSeekerPortal> {
                 width: (size.width - 100) / 2,
                 height: 55,
                 decoration: BoxDecoration(
-                  color: secondary.withOpacity(0.08),
+                  borderRadius: BorderRadius.circular(8),
+                  border: Border.all(color: Color(0xFFE9E9E9)),
+                  color: Color(0xFFF8F8F8),
                 ),
                 child: Center(
                   child: Text(
                     "William",
                     style: TextStyle(
-                        fontSize: 16,
-                        fontFamily: 'Poppins',
-                        fontWeight: FontWeight.w500),
+                      fontSize: 16,
+                      fontFamily: 'Poppins',
+                      fontWeight: FontWeight.w500,
+                      color: Color(0xFF323232),
+                    ),
                   ),
                 ),
               ),
@@ -434,15 +473,19 @@ class _JobSeekerPortalState extends State<JobSeekerPortal> {
                 width: (size.width - 100) / 2,
                 height: 55,
                 decoration: BoxDecoration(
-                  color: secondary.withOpacity(0.08),
+                  borderRadius: BorderRadius.circular(8),
+                  border: Border.all(color: Color(0xFFE9E9E9)),
+                  color: Color(0xFFF8F8F8),
                 ),
                 child: Center(
                   child: Text(
                     "Smith",
                     style: TextStyle(
-                        fontSize: 16,
-                        fontFamily: 'Poppins',
-                        fontWeight: FontWeight.w500),
+                      fontSize: 16,
+                      fontFamily: 'Poppins',
+                      fontWeight: FontWeight.w500,
+                      color: Color(0xFF323232),
+                    ),
                   ),
                 ),
               ),
@@ -452,30 +495,47 @@ class _JobSeekerPortalState extends State<JobSeekerPortal> {
           Container(
             width: size.width - 44,
             height: 55,
-            decoration: BoxDecoration(color: Color(0xFFEDEDED)),
-            child: TextField(
-              decoration: InputDecoration(
-                  border: OutlineInputBorder(), hintText: "Email"),
+            decoration: BoxDecoration(
+                color: Color(0xFFF8F8F8),
+                borderRadius: BorderRadius.circular(8)),
+            child: Padding(
+              padding: const EdgeInsets.only(left: 15, right: 10),
+              child: TextField(
+                keyboardType: TextInputType.emailAddress,
+                decoration: InputDecoration(
+                    border: InputBorder.none, hintText: "Email"),
+              ),
             ),
           ),
           const SizedBox(height: 20),
           Container(
             width: double.infinity,
             height: 55,
-            decoration:
-                BoxDecoration(border: Border.all(), color: Color(0xFFEDEDED)),
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(8),
+                color: Color(0xFFF8F8F8)),
             child: Row(
               children: [
                 Container(
                   width: (size.width - 30) * 0.7,
                   height: 55,
+                  decoration: BoxDecoration(
+                    color: Color(0xFFF8F8F8),
+                    borderRadius: BorderRadius.circular(8),
+                  ),
                   child: Padding(
-                    padding: const EdgeInsets.only(left: 15),
+                    padding: const EdgeInsets.only(left: 15, right: 15),
                     child: TextField(
                       obscureText: true,
-                      cursorColor: secondary,
                       decoration: InputDecoration(
-                          border: InputBorder.none, hintText: "Password"),
+                          border: InputBorder.none,
+                          hintText: "Password",
+                          hintStyle: TextStyle(
+                            fontSize: 16,
+                            fontFamily: 'Poppins',
+                            fontWeight: FontWeight.w500,
+                            color: Color(0x66323232),
+                          )),
                     ),
                   ),
                 ),
@@ -491,7 +551,7 @@ class _JobSeekerPortalState extends State<JobSeekerPortal> {
                         child: Text(
                           "SHOW",
                           style: TextStyle(
-                            color: secondary,
+                            color: Color(0xFF122261),
                             fontSize: 14,
                             fontFamily: 'Poppins',
                             fontWeight: FontWeight.w600,
@@ -528,15 +588,49 @@ class _JobSeekerPortalState extends State<JobSeekerPortal> {
           const SizedBox(height: 30),
           Align(
             alignment: Alignment.center,
-            child: Text(
-              "By tapping “Sign Up” you accept our term and condition",
-              style: TextStyle(
-                fontSize: 14,
-                height: 1.6,
-                fontFamily: 'Poppins',
-                fontWeight: FontWeight.w400,
-                color: black.withOpacity(0.7),
-              ),
+            child: Wrap(
+              children: [
+                Text(
+                  "By tapping “Sign Up” you accept our ",
+                  style: TextStyle(
+                    fontSize: 14,
+                    height: 1.6,
+                    fontFamily: 'Poppins',
+                    fontWeight: FontWeight.w400,
+                    color: Color(0x80000000),
+                  ),
+                ),
+                Text(
+                  "terms ",
+                  style: TextStyle(
+                    fontSize: 14,
+                    height: 1.6,
+                    fontFamily: 'Poppins',
+                    fontWeight: FontWeight.w400,
+                    color: Color(0xFF122261),
+                  ),
+                ),
+                Text(
+                  "and ",
+                  style: TextStyle(
+                    fontSize: 14,
+                    height: 1.6,
+                    fontFamily: 'Poppins',
+                    fontWeight: FontWeight.w400,
+                    color: Color(0x80000000),
+                  ),
+                ),
+                Text(
+                  "condition",
+                  style: TextStyle(
+                    fontSize: 14,
+                    height: 1.6,
+                    fontFamily: 'Poppins',
+                    fontWeight: FontWeight.w400,
+                    color: Color(0xFF122261),
+                  ),
+                ),
+              ],
             ),
           ),
           const SizedBox(height: 10),
@@ -547,34 +641,21 @@ class _JobSeekerPortalState extends State<JobSeekerPortal> {
                   context, MaterialPageRoute(builder: (_) => KarierHomePage()));
             },
             child: Container(
-              width: double.infinity,
-              height: 60,
+              width: double.infinity - 55,
+              height: 65,
               decoration: BoxDecoration(
-                border: Border.all(color: secondary),
+                border: Border.all(color: Color(0xFF122261)),
                 color: white,
-                borderRadius: BorderRadius.circular(12),
+                borderRadius: BorderRadius.circular(8),
               ),
-              child: Padding(
-                padding: const EdgeInsets.only(left: 20),
-                child: Row(
-                  children: [
-                    Container(
-                      width: 25,
-                      height: 25,
-                      decoration: BoxDecoration(),
-                    ),
-                    const SizedBox(width: 22),
-                    Center(
-                      child: Text(
-                        "Continue as guest",
-                        style: TextStyle(
-                            color: Color(0xFF122261),
-                            fontFamily: 'Poppins',
-                            fontSize: 16,
-                            fontWeight: FontWeight.w600),
-                      ),
-                    ),
-                  ],
+              child: Center(
+                child: Text(
+                  "Continue as guest",
+                  style: TextStyle(
+                      color: Color(0xFF122261),
+                      fontFamily: 'Poppins',
+                      fontSize: 16,
+                      fontWeight: FontWeight.w600),
                 ),
               ),
             ),

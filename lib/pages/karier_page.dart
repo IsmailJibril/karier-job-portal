@@ -12,7 +12,6 @@ class KarierPage extends StatefulWidget {
 }
 
 class _KarierPageState extends State<KarierPage> {
-  
   int karierIndex = 0;
   @override
   Widget build(BuildContext context) {
@@ -138,7 +137,6 @@ class _KarierPageState extends State<KarierPage> {
                   onTap: () {
                     setState(() {
                       karierIndex = index;
-                      
                     });
                   },
                   child: Column(
@@ -167,11 +165,11 @@ class _KarierPageState extends State<KarierPage> {
                                   Container(
                                     width: 100,
                                     height: 100,
-                                    color: black.withOpacity(0.4),
+                                    color: Color(0XFFEFF2EF),
                                     child: Icon(
                                       karierJson[index]['icon'],
                                       size: 48,
-                                      color: Colors.white,
+                                      color: blue,
                                     ),
                                   ),
                                   const SizedBox(height: 15),
@@ -264,11 +262,11 @@ class _KarierPageState extends State<KarierPage> {
                                 Container(
                                   width: 100,
                                   height: 100,
-                                  color: black.withOpacity(0.4),
+                                  color: Color(0XFFEFF2EF),
                                   child: Icon(
                                     karierJson[index]['icon'],
                                     size: 48,
-                                    color: Colors.white,
+                                    color: blue,
                                   ),
                                 ),
                                 const SizedBox(height: 15),
@@ -313,13 +311,8 @@ class _KarierPageState extends State<KarierPage> {
       padding: const EdgeInsets.only(right: 25, left: 25, bottom: 40),
       child: GestureDetector(
         onTap: () {
-          
           Navigator.push(
-              context,
-              MaterialPageRoute(
-                  builder: (_) => JobSeekerPortal(
-                        
-                      )));
+              context, MaterialPageRoute(builder: (_) => JobSeekerPortal()));
         },
         child: Container(
           width: double.infinity,

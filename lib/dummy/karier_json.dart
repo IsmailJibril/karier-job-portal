@@ -1,14 +1,15 @@
+import 'package:flutter/material.dart';
 import 'package:karier_job_portal/theme/colors.dart';
 import 'package:line_icons/line_icons.dart';
 
 const List karierJson = [
   {
-    "icon": LineIcons.personEnteringBooth,
+    "icon": Icons.computer_outlined,
     "name": "JOB SEEKERS",
     "description": "Finding a job here never been easier than before",
   },
   {
-    "icon": LineIcons.building,
+    "icon": Icons.business_center_rounded,
     "name": "COMPANY",
     "description": "Let’s recruit your great candidate faster here ",
   }

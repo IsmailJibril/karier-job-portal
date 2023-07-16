@@ -58,7 +58,7 @@ class _TextSliderState extends State<TextSlider> {
         Container(
           child: CarouselSlider(
             options: CarouselOptions(
-              height: 180,
+              height: 120,
               viewportFraction: 1,
               onPageChanged: (index, reason) {
                 setActiveDot(index);
