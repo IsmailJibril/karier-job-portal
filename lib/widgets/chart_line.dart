@@ -18,10 +18,14 @@ LineChartData activityData() {
             spots: [
               FlSpot(0, 3),
               FlSpot(2.6, 2.5),
-              
+              FlSpot(4.9, 4),
+              FlSpot(6.7, 3.5),
+              FlSpot(8, 4.5),
+              FlSpot(9.5, 3),
+              FlSpot(11, 5),
             ],
             isCurved: true,
-            color: white,
+            color: primary,
             barWidth: 2,
             isStrokeCapRound: true,
             dotData: FlDotData(show: false),

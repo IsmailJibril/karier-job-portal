@@ -15,71 +15,80 @@ class _DrawerPageState extends State<DrawerPage> {
   List<Color> gradientColors = [Color(0xFF122261), Color(0xFF124561)];
   @override
   Widget build(BuildContext context) {
-    return Drawer(
-      child: ListView(
-        children: [getHeader(), getBody(), getFooter()],
+    return Scaffold(
+      backgroundColor: Color(0xFFFAFAFA),
+      appBar: PreferredSize(
+          child: getAppBar(), preferredSize: Size.fromHeight(160)),
+      body: listDrawer(),
+    );
+  }
+
+  Widget getAppBar() {
+    return Padding(
+      padding: const EdgeInsets.only(right: 20, left: 20),
+      child: AppBar(
+        backgroundColor: Color(0xFFFAFAFA),
+        elevation: 0,
+        leading: Container(
+          width: 70,
+          height: 45,
+          decoration: BoxDecoration(
+              color: white,
+              borderRadius: BorderRadius.circular(12),
+              border: Border.all(color: secondary.withOpacity(0.2)),
+              image: DecorationImage(
+                  image: AssetImage("assets/images/Icon.png"),
+                  fit: BoxFit.cover)),
+        ),
+        title: Container(
+          width: 100,
+          height: 50,
+          child: Center(
+            child: Text(
+              "Karier",
+              style: TextStyle(
+                  color: Color(0xFF152C6A),
+                  fontSize: 30,
+                  fontWeight: FontWeight.w600),
+            ),
+          ),
+        ),
+        actions: [
+          Container(
+            width: 30,
+            height: 30,
+            decoration:
+                BoxDecoration(color: grey, shape: BoxShape.circle, boxShadow: [
+              BoxShadow(
+                  color: secondary.withOpacity(0.15),
+                  blurRadius: 5,
+                  offset: Offset(0, 5))
+            ]),
+            child: IconButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              icon: Center(
+                child: Icon(
+                  Icons.clear,
+                  size: 15,
+                  color: white,
+                ),
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
 
-  Widget getHeader() {
-    return SizedBox(
-      height: 60,
-      child: DrawerHeader(
-        child: Row(
-          children: [
-            Container(
-              width: 50,
-              height: 50,
-              decoration: BoxDecoration(
-                  color: white,
-                  borderRadius: BorderRadius.circular(12),
-                  border: Border.all(color: secondary.withOpacity(0.2)),
-                  image: DecorationImage(
-                      image: AssetImage("assets/images/Icon.png"),
-                      fit: BoxFit.cover)),
-            ),
-            Flexible(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    "Karier",
-                    style: TextStyle(
-                        color: Color(0xFF152C6A),
-                        fontSize: 17,
-                        fontWeight: FontWeight.w600),
-                  ),
-                  Container(
-                    width: 30,
-                    height: 30,
-                    decoration: BoxDecoration(
-                        color: grey,
-                        shape: BoxShape.circle,
-                        boxShadow: [
-                          BoxShadow(
-                              color: secondary.withOpacity(0.15),
-                              blurRadius: 5,
-                              offset: Offset(0, 5))
-                        ]),
-                    child: IconButton(
-                      onPressed: () {
-                        Navigator.pop(context);
-                      },
-                      icon: Center(
-                        child: Icon(
-                          Icons.clear,
-                          size: 15,
-                          color: white,
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            )
-          ],
-        ),
+  Widget listDrawer() {
+    return Drawer(
+      child: ListView(
+        children: [
+          getBody(),
+          getFooter(),
+        ],
       ),
     );
   }
@@ -193,10 +202,12 @@ class _DrawerPageState extends State<DrawerPage> {
                 ),
                 title: Text(
                   "Logout",
-                  style: TextStyle(fontSize: 16,
-                  fontFamily: 'Poppins',
-                  fontWeight: FontWeight.w500,
-                   color: Color(0x99000000),),
+                  style: TextStyle(
+                    fontSize: 16,
+                    fontFamily: 'Poppins',
+                    fontWeight: FontWeight.w500,
+                    color: Color(0x99000000),
+                  ),
                 ),
               ),
             ),

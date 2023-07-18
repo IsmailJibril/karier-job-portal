@@ -14,25 +14,32 @@ const List karierJson = [
     "description": "Let’s recruit your great candidate faster here ",
   }
 ];
-
+//[17.0, 70.0, 60.0, 75.0, 23.0, 60.0, 27.0, 80.0, 75.0]
+//[30.0, 17.0, 70.0, 55.0, 75.0, 23.0, 60.0, 27.0, 90.0]
 const List karierJobList = [
   {
     "name": "Jobs Applied",
     "point": 874,
-    "color": secondary,
+    "color": Color(0xFF122261),
     "percent": 0.8,
+    "state": "increases",
+    "data": [17.0, 70.0, 60.0, 75.0, 23.0, 60.0, 27.0, 80.0, 75.0]
   },
   {
     "name": "Interviewed",
     "point": 34,
-    "color": primary,
-    "percent": 0.3,
+    "color": Color(0xFF223FAF),
+    "percent": 0.6,
+    "state": "dncreases",
+    "data": [30.0, 17.0, 70.0, 55.0, 75.0, 23.0, 60.0, 27.0, 90.0]
   },
   {
     "name": "Detalied",
     "point": 500,
     "color": grey,
-    "percent": 0.6,
+    "percent": 0.7,
+    "state": "increases",
+    "data": [17.0, 70.0, 60.0, 75.0, 23.0, 60.0, 27.0, 80.0, 75.0]
   },
 ];
 
@@ -238,16 +245,7 @@ const List notifyJson = [
 ];
 
 const List skillsProfileJson = [
-  {
-    "skill": "Drawing",
-    "precentage": 0.7
-  },
-  {
-    "skill": "Research",
-    "precentage": 0.5
-  },
-  {
-    "skill": "Sketch",
-    "precentage": 0.8
-  },
+  {"skill": "Drawing", "precentage": 0.7},
+  {"skill": "Research", "precentage": 0.5},
+  {"skill": "Sketch", "precentage": 0.8},
 ];

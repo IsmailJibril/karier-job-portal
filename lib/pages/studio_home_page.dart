@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:karier_job_portal/theme/colors.dart';
 import 'package:line_icons/line_icons.dart';
 
+import 'karier_search_page.dart';
+
 class StudioHomePage extends StatefulWidget {
   const StudioHomePage({super.key});
 
@@ -224,23 +226,31 @@ class _StudioHomePageState extends State<StudioHomePage> {
                         ),
                       ],
                     ),
-                    Container(
-                      width: 32,
-                      height: 40,
-                      decoration: BoxDecoration(color: white),
-                      child: Row(
-                        children: [
-                          Icon(
-                            Icons.arrow_forward_ios,
-                            size: 16,
-                            color: Color(0xFFE1E1E1),
-                          ),
-                          Icon(
-                            Icons.arrow_forward_ios,
-                            size: 16,
-                            color: Color(0xFF122261),
-                          ),
-                        ],
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (_) => KarierSearchPage()));
+                      },
+                      child: Container(
+                        width: 32,
+                        height: 40,
+                        decoration: BoxDecoration(color: white),
+                        child: Row(
+                          children: [
+                            Icon(
+                              Icons.arrow_forward_ios,
+                              size: 16,
+                              color: Color(0xFFE1E1E1),
+                            ),
+                            Icon(
+                              Icons.arrow_forward_ios,
+                              size: 16,
+                              color: Color(0xFF122261),
+                            ),
+                          ],
+                        ),
                       ),
                     )
                   ],
